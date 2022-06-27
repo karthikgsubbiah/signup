@@ -7,6 +7,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 
 import lombok.AllArgsConstructor;
 
+/**
+ * 
+ * Security config file
+ * 
+ * @author karthikgsubbiah
+ *
+ */
 @Configuration
 @AllArgsConstructor
 @EnableWebSecurity
