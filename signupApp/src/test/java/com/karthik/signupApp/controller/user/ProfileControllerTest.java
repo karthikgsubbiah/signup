@@ -1,4 +1,4 @@
-package com.karthik.signupApp.user;
+package com.karthik.signupApp.controller.user;
 
 import static org.mockito.Mockito.times;
 
