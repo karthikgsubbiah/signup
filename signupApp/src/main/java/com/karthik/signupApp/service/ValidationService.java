@@ -14,8 +14,8 @@ public class ValidationService {
 		return (match.find() && match.group().equals(phoneNumber));
 	}
 	
-	public boolean checkForNonNullPasswords(String password) {
-		return password != null;
+	public boolean checkForInvalidPasswords(String password) {
+		return password != null && !password.isEmpty();
 	}
 
 	public boolean validateConfirmPassword(String newPassword, String confirmPassword) {

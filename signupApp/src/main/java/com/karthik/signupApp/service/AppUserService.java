@@ -45,6 +45,10 @@ public class AppUserService {
 		if (appUserRepository.findByEmail(appUser.getEmailAddress()) != null) {
 			throw new IllegalStateException("Email already taken");
 		}
+		
+		if (!validationService.validatePhoneNumber(appUser.getPhoneNumber())) {
+			throw new IllegalStateException("Phone number invalid");
+		}
 
 		String encodedPassword = bCryptPasswordEncoder.encode(appUser.getPassword());
 		appUser.setPassword(encodedPassword);
@@ -80,8 +84,8 @@ public class AppUserService {
 			throw new IllegalStateException("Email not registered");
 		}
 
-		if (!validationService.checkForNonNullPasswords(newPassword)
-				|| !validationService.checkForNonNullPasswords(confirmPassword)) {
+		if (!validationService.checkForInvalidPasswords(newPassword)
+				|| !validationService.checkForInvalidPasswords(confirmPassword)) {
 			throw new IllegalArgumentException("Passwords entered are invalid!!!");
 		}
 
