@@ -31,6 +31,9 @@ public class AppUserServiceTest {
 	@Mock
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+	@Mock
+	private ValidationService validationService;
+
 	@InjectMocks
 	private AppUserService appUserService;
 
@@ -48,6 +51,7 @@ public class AppUserServiceTest {
 	public void testSignUpUser() {
 		AppUser user = getAppUser();
 		Mockito.when(bCryptPasswordEncoder.encode(user.getPassword())).thenReturn("passss");
+		Mockito.when(validationService.validatePhoneNumber(user.getPhoneNumber())).thenReturn(true);
 		String userId = appUserService.signUpUser(user);
 		Mockito.verify(appUserRepository, times(1)).save(user);
 		Assert.assertNotNull(userId);
