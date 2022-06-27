@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.karthik.signupApp.model.RegistrationRequest;
-import com.karthik.signupApp.service.registration.RegistrationService;
+import com.karthik.signupApp.service.RegistrationService;
 
 import lombok.AllArgsConstructor;
 

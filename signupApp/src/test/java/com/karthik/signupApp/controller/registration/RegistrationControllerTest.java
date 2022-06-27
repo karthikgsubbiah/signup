@@ -11,7 +11,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import com.karthik.signupApp.model.RegistrationRequest;
 import com.karthik.signupApp.model.UserRole;
-import com.karthik.signupApp.service.registration.RegistrationService;
+import com.karthik.signupApp.service.RegistrationService;
 
 /**
  * 

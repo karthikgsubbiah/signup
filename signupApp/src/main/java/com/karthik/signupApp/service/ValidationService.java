@@ -1,4 +1,4 @@
-package com.karthik.signupApp.service.registration;
+package com.karthik.signupApp.service;
 
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;

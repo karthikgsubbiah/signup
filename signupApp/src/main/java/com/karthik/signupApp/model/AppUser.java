@@ -27,7 +27,7 @@ public class AppUser {
 	public AppUser() {
 
 	}
-	
+
 	public AppUser(String firstName, String lastName, String emailAddress, String password, String phoneNumber) {
 		this.id = UUID.randomUUID().toString();
 		this.firstName = firstName;
@@ -37,8 +37,8 @@ public class AppUser {
 		this.phoneNumber = phoneNumber;
 	}
 
-	public AppUser(String firstName, String lastName, String emailAddress, String password,
-			String phoneNumber, UserRole appUserRole) {
+	public AppUser(String firstName, String lastName, String emailAddress, String password, String phoneNumber,
+			UserRole appUserRole) {
 		this.id = UUID.randomUUID().toString();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -55,6 +55,7 @@ public class AppUser {
 		this.emailAddress = registrationRequest.getEmail();
 		this.password = registrationRequest.getPassword();
 		this.phoneNumber = registrationRequest.getPhoneNumber();
+		this.appUserRole = registrationRequest.isAdmin() ? UserRole.ADMIN : UserRole.USER;
 	}
 
 	public String getFirstName() {
